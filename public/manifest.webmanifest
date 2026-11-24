@@ -1,0 +1,20 @@
+{
+  "id": "/",
+  "name": "ChatGPT Pro",
+  "short_name": "ChatGPT Pro",
+  "description": "Chat with AI and create images with DALL·E.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#202123",
+  "theme_color": "#202123",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

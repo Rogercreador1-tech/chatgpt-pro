@@ -2,10 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: light dark;
+  background: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior: none;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
 body {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
+  overflow: hidden;
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+textarea {
+  font-size: 16px;
+}
+
+@supports (height: 100dvh) {
+  html,
+  body,
+  #root {
+    height: 100dvh;
+  }
 }
 
 @layer components {
@@ -20,4 +65,39 @@ body {
 
 ::-webkit-scrollbar-thumb {
   @apply bg-light-grey dark:bg-dark-grey rounded-xl;
+}
+
+@media (max-width: 640px) {
+  main {
+    min-width: 0;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  main > form {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    margin-bottom: max(0.5rem, env(safe-area-inset-bottom)) !important;
+    gap: 0.5rem;
+  }
+
+  main > form textarea {
+    min-width: 0;
+    resize: none;
+  }
+
+  main > section {
+    min-height: 0;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  main > section ul {
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+  }
+
+  main > section ul li {
+    padding: 0.75rem !important;
+    overflow-wrap: anywhere;
+  }
 }
